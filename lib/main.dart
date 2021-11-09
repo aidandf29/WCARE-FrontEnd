@@ -1,13 +1,11 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'package:wcare/pages/activitypage.dart';
+import 'package:wcare/pages/activity_page.dart';
 
 
 void main() => runApp(MaterialApp(
-  initialRoute: '/Home',
+  initialRoute: '/activity',
   routes: {
-    '/activity: (context) => ActivityPage(),
+    '/activity': (context) => Activity(),
 
   },
 ));

@@ -5,11 +5,11 @@ class Activity extends StatefulWidget {
   _ActivityState createState() => _ActivityState();
 }
 
-class _ActivityState extends State<Home> {
+class _ActivityState extends State<Activity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Text('Activity')),
+      body: SafeArea(child: Text('Activity testing')),
     );
   }
 }
