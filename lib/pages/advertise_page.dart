@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Profil extends StatefulWidget {
+class Advertise extends StatefulWidget {
   @override
-  _ProfilState createState() => _ProfilState();
+  _AdvertiseState createState() => _AdvertiseState();
 }
 
-class _ProfilState extends State<Profil> {
+class _AdvertiseState extends State<Advertise> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

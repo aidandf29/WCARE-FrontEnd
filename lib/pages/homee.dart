@@ -1,15 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class Activity extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  _ActivityState createState() => _ActivityState();
+  _HomeState createState() => _HomeState();
 }
 
-class _ActivityState extends State<Activity> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

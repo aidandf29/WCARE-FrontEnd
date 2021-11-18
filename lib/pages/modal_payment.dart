@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Profil extends StatefulWidget {
+class ModalPayment extends StatefulWidget {
   @override
-  _ProfilState createState() => _ProfilState();
+  _ModalPaymentState createState() => _ModalPaymentState();
 }
 
-class _ProfilState extends State<Profil> {
+class _ModalPaymentState extends State<ModalPayment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

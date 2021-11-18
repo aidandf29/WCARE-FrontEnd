@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Profil extends StatefulWidget {
+class PetBreed extends StatefulWidget {
   @override
-  _ProfilState createState() => _ProfilState();
+  _PetBreedState createState() => _PetBreedState();
 }
 
-class _ProfilState extends State<Profil> {
+class _PetBreedState extends State<PetBreed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,14 +1,16 @@
+// ignore_for_file: file_names
+
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Activity extends StatefulWidget {
+class Navbar extends StatefulWidget {
   @override
-  _ActivityState createState() => _ActivityState();
+  _NavbarState createState() => _NavbarState();
 }
 
-class _ActivityState extends State<Activity> {
+class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
 
   @override
