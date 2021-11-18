@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 //import pages
 import 'package:wcare/pages/activity_page.dart';
 import 'package:wcare/pages/advertise_page.dart';
@@ -49,3 +50,11 @@ void main() => runApp(MaterialApp(
 
   },
 ));
+=======
+void main() => runApp(MaterialApp(
+      initialRoute: '/activity',
+      routes: {
+        '/activity': (context) => Activity(),
+      },
+    ));
+>>>>>>> 78ea4cffc5f18e7a653cd533b7c115e4cc76b06b
