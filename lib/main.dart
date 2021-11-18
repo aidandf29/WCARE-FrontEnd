@@ -5,7 +5,7 @@ import 'package:wcare/pages/activity_page.dart';
 import 'package:wcare/pages/advertise_page.dart';
 import 'package:wcare/pages/checkout_page.dart';
 import 'package:wcare/pages/edit_profil.dart';
-import 'package:wcare/pages/home.dart';
+import 'package:wcare/pages/homee.dart';
 import 'package:wcare/pages/modal_payment.dart';
 import 'package:wcare/pages/payment_details.dart';
 import 'package:wcare/pages/pet_adopt.dart';
@@ -14,43 +14,36 @@ import 'package:wcare/pages/pet_grooming.dart';
 import 'package:wcare/pages/pet_hotel.dart';
 import 'package:wcare/pages/pet_sitter.dart';
 import 'package:wcare/pages/pet_training.dart';
-import 'package:wcare/pages/Product_onestop_petshop.dart';
+import 'package:wcare/pages/product_onestop_petshop.dart';
 import 'package:wcare/pages/product_page.dart';
 import 'package:wcare/pages/profil.dart';
 import 'package:wcare/pages/signin.dart';
 import 'package:wcare/pages/signup.dart';
-import 'package:wcare/pages/welcome_page.dart';
-import 'package:wcare/pages/wish_list.dart';
+import 'package:wcare/pages/wishlist.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/activity',
-      routes: {
-        '/activity': (context) => Activity(),
-        '/advertise': (context) => Advertise(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-        '/activity': (context) => Activity(),
-      },
-    ));
+  initialRoute: '/Home',
+  routes: {
+    // '/': (context) => Activity(),
+    '/activity': (context) => Activity(),
+    '/advertise': (context) => Advertise(),
+    '/checkout': (context) => Checkout(),
+    '/edit_profil': (context) => EditProfil(),
+    '/home': (context) => Home(),
+    '/paymentdetails': (context) => PaymentDetails(),
+    '/modalpayment': (context) => ModalPayment(),
+    '/adopt': (context) => PetAdopt(),
+    '/breed': (context) => PetBreed(),
+    '/grooming': (context) => PetGrooming(),
+    '/hotel': (context) => PetHotel(),
+    '/sitter': (context) => PetSitter(),
+    '/training': (context) => PetTraining(),
+    '/petshop': (context) => ProductOnestopPetshop(),
+    '/product': (context) => ProductPage(),
+    '/profil': (context) => Profil(),
+    '/signin': (context) => SignIn(),
+    '/signup': (context) => SignUp(),
+    '/wishlist': (context) => Wishlist(),
 
-void main() => runApp(MaterialApp(
-      initialRoute: '/activity',
-      routes: {
-        '/activity': (context) => Activity(),
-      },
-    ));
+  },
+));

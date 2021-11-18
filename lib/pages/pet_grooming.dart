@@ -5,12 +5,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Activity extends StatefulWidget {
+class PetGrooming extends StatefulWidget {
   @override
-  _ActivityState createState() => _ActivityState();
+  _PetGroomingState createState() => _PetGroomingState();
 }
 
-class _ActivityState extends State<Activity> {
+class _PetGroomingState extends State<PetGrooming> {
   int _currentIndex = 0;
   @override
   void initState() {
