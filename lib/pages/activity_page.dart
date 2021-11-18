@@ -11,8 +11,22 @@ class Activity extends StatefulWidget {
 }
 
 class _ActivityState extends State<Activity> {
+  int _currentIndex = 0;
   @override
+  void initState() {
+    super.initState();
+    var _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    var _pageController;
+    _pageController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
+    var _pageController;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -20,178 +34,7 @@ class _ActivityState extends State<Activity> {
                 image: AssetImage('assets/backgroundsikat.png'))),
         alignment: Alignment.center,
         child: Stack(
-          children: [
-            Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 400,
-                      width: 270,
-                      child: Container(
-                          alignment: Alignment.topCenter,
-                          decoration: BoxDecoration(
-                              color: Color(0xFFA7D7C5),
-                              borderRadius: BorderRadius.circular(25)),
-                          child: Center(
-                            child: GridView.count(
-                              crossAxisCount: 3,
-                              children: <Widget>[
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25)),
-                                  color: Color(0xFFA7D7C5),
-                                  margin: EdgeInsets.all(10),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    focusColor: Colors.grey,
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          Image.asset('assets/kucing.png'),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            'Cat',
-                                            style: TextStyle(
-                                                fontFamily: 'PTSerifCaption',
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25)),
-                                  color: Color(0xFFA7D7C5),
-                                  margin: EdgeInsets.all(10),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    focusColor: Colors.grey,
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          Image.asset('assets/kucing.png'),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            'Cat',
-                                            style: TextStyle(
-                                                fontFamily: 'PTSerifCaption',
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25)),
-                                  color: Color(0xFFA7D7C5),
-                                  margin: EdgeInsets.all(10),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    focusColor: Colors.grey,
-                                    splashColor: Colors.grey,
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: <Widget>[
-                                          Image.asset(
-                                            'assets/kucing.png',
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Text(
-                                            'Cat',
-                                            style: TextStyle(
-                                                fontFamily: 'PTSerifCaption',
-                                                fontSize: 10,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          )),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 60),
-                      color: Color(0xFFA7D7C5),
-                      child: Text(
-                        'Pick up',
-                        style: TextStyle(
-                            fontFamily: 'PTSerifCaption',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      splashColor: Colors.greenAccent,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 80),
-                      color: Color(0xFFA7D7C5),
-                      child: Text(
-                        'Delivered',
-                        style: TextStyle(
-                            fontFamily: 'PTSerifCaption',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      splashColor: Colors.greenAccent,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 100),
-                      color: Color(0xFFA7D7C5),
-                      child: Text(
-                        'Checkout',
-                        style: TextStyle(
-                            fontFamily: 'PTSerifCaption',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      splashColor: Colors.greenAccent,
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
+          children: [],
         ),
       ),
     );
