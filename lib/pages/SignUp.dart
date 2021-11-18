@@ -1,15 +1,12 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class Activity extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _ActivityState createState() => _ActivityState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _ActivityState extends State<Activity> {
+class _SignUpState extends State<SignUp> {
   bool isHiddenPassword = true;
 
   @override

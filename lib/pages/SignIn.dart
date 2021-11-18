@@ -1,15 +1,12 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class Activity extends StatefulWidget {
+class SignIn extends StatefulWidget {
   @override
-  _ActivityState createState() => _ActivityState();
+  _SignInState createState() => _SignInState();
 }
 
-class _ActivityState extends State<Activity> {
+class _SignInState extends State<SignIn> {
   bool isHiddenPassword = true;
   @override
   Widget build(BuildContext context) {
@@ -48,7 +45,7 @@ class _ActivityState extends State<Activity> {
                     width: 250,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Color(0xFF74B49B),
+                          color: Color(0xFFA7D7C5),
                           borderRadius: BorderRadius.circular(25)),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
