@@ -5,7 +5,7 @@ import 'package:wcare/pages/activity_page.dart';
 import 'package:wcare/pages/advertise_page.dart';
 import 'package:wcare/pages/checkout_page.dart';
 import 'package:wcare/pages/edit_profil.dart';
-import 'package:wcare/pages/homee.dart';
+import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/modal_payment.dart';
 import 'package:wcare/pages/payment_details.dart';
 import 'package:wcare/pages/pet_adopt.dart';
@@ -22,28 +22,27 @@ import 'package:wcare/pages/signup.dart';
 import 'package:wcare/pages/wishlist.dart';
 
 void main() => runApp(MaterialApp(
-  initialRoute: '/Home',
-  routes: {
-    // '/': (context) => Activity(),
-    '/activity': (context) => Activity(),
-    '/advertise': (context) => Advertise(),
-    '/checkout': (context) => Checkout(),
-    '/edit_profil': (context) => EditProfil(),
-    '/home': (context) => Home(),
-    '/paymentdetails': (context) => PaymentDetails(),
-    '/modalpayment': (context) => ModalPayment(),
-    '/adopt': (context) => PetAdopt(),
-    '/breed': (context) => PetBreed(),
-    '/grooming': (context) => PetGrooming(),
-    '/hotel': (context) => PetHotel(),
-    '/sitter': (context) => PetSitter(),
-    '/training': (context) => PetTraining(),
-    '/petshop': (context) => ProductOnestopPetshop(),
-    '/product': (context) => ProductPage(),
-    '/profil': (context) => Profil(),
-    '/signin': (context) => SignIn(),
-    '/signup': (context) => SignUp(),
-    '/wishlist': (context) => Wishlist(),
-
-  },
-));
+      initialRoute: '/signin',
+      routes: {
+        // '/': (context) => Activity(),
+        '/activity': (context) => Activity(),
+        '/advertise': (context) => Advertise(),
+        '/checkout': (context) => Checkout(),
+        '/edit_profil': (context) => EditProfil(),
+        '/home': (context) => Home(),
+        '/paymentdetails': (context) => PaymentDetails(),
+        '/modalpayment': (context) => ModalPayment(),
+        '/adopt': (context) => PetAdopt(),
+        '/breed': (context) => PetBreed(),
+        '/grooming': (context) => PetGrooming(),
+        '/hotel': (context) => PetHotel(),
+        '/sitter': (context) => PetSitter(),
+        '/training': (context) => PetTraining(),
+        '/petshop': (context) => ProductOnestopPetshop(),
+        '/product': (context) => ProductPage(),
+        '/profil': (context) => Profil(),
+        '/signin': (context) => SignIn(),
+        '/signup': (context) => SignUp(),
+        '/wishlist': (context) => Wishlist(),
+      },
+    ));

@@ -45,7 +45,7 @@ class _SignInState extends State<SignIn> {
                     width: 250,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Color(0xFFA7D7C5),
+                          color: Color(0xFF74B49B),
                           borderRadius: BorderRadius.circular(25)),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
