@@ -22,7 +22,7 @@ import 'package:wcare/pages/signup.dart';
 import 'package:wcare/pages/wishlist.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/signin',
+      initialRoute: '/profil',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),
