@@ -4,6 +4,8 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/home.dart';
+import 'package:wcare/pages/pet_grooming.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -13,22 +15,24 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
 
+  var _pageController;
+
   @override
   void initState() {
     super.initState();
-    var _pageController = PageController();
+    _pageController = PageController();
   }
 
   @override
   void dispose() {
-    var _pageController;
+    _pageController;
     _pageController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    var _pageController;
+    _pageController;
     return Scaffold(
       body: SizedBox.expand(
         child: PageView(
@@ -38,10 +42,10 @@ class _NavbarState extends State<Navbar> {
           },
           children: <Widget>[
             Container(
-              color: Colors.blueGrey,
+              child: Home(),
             ),
             Container(
-              color: Colors.red,
+              child: PetGrooming(),
             ),
             Container(
               color: Colors.green,
@@ -107,5 +111,11 @@ class _NavbarState extends State<Navbar> {
         ],
       ),
     );
+  }
+
+  void onItemSelected(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }

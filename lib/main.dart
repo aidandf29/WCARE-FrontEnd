@@ -20,9 +20,11 @@ import 'package:wcare/pages/profil.dart';
 import 'package:wcare/pages/signin.dart';
 import 'package:wcare/pages/signup.dart';
 import 'package:wcare/pages/wishlist.dart';
+import 'package:wcare/pages/searchbar.dart';
+import 'package:wcare/pages/navbar.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/signin',
+      initialRoute: '/adopt',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),
@@ -44,5 +46,7 @@ void main() => runApp(MaterialApp(
         '/signin': (context) => SignIn(),
         '/signup': (context) => SignUp(),
         '/wishlist': (context) => Wishlist(),
+        '/searchbar': (context) => Searchbar(),
+        '/navbar': (context) => Navbar(),
       },
     ));

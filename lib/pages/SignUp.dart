@@ -1,5 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/home.dart';
+import 'package:wcare/pages/navbar.dart';
+import 'package:wcare/pages/signin.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -221,7 +224,13 @@ class _SignUpState extends State<SignUp> {
                               height: 10,
                             ),
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            Navbar()));
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
                               // ignore: prefer_const_constructors
@@ -241,7 +250,13 @@ class _SignUpState extends State<SignUp> {
                               height: 15,
                             ),
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SignIn()));
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
                               padding: EdgeInsets.symmetric(

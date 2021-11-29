@@ -1,5 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/home.dart';
+import 'package:wcare/pages/navbar.dart';
+import 'package:wcare/pages/signup.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -89,7 +92,6 @@ class _SignInState extends State<SignIn> {
                                         enabledBorder: OutlineInputBorder(
                                             borderRadius:
                                                 BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
                                             borderSide: BorderSide(
                                               color: Colors.grey,
                                               width: 0.0,
@@ -97,7 +99,6 @@ class _SignInState extends State<SignIn> {
                                         focusedBorder: OutlineInputBorder(
                                             borderRadius:
                                                 BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
                                             borderSide: BorderSide(
                                                 color: Colors.black,
                                                 width: 1.0))),
@@ -147,7 +148,13 @@ class _SignInState extends State<SignIn> {
                               height: 10,
                             ),
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            Navbar()));
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
 
@@ -169,7 +176,13 @@ class _SignInState extends State<SignIn> {
                               height: 15,
                             ),
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SignUp()));
+                              },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)),
                               padding: EdgeInsets.symmetric(

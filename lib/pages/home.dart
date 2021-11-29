@@ -2,6 +2,14 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/Product_onestop_petshop.dart';
+import 'package:wcare/pages/pet_adopt.dart';
+import 'package:wcare/pages/pet_breed.dart';
+import 'package:wcare/pages/pet_grooming.dart';
+import 'package:wcare/pages/pet_hotel.dart';
+import 'package:wcare/pages/pet_sitter.dart';
+import 'package:wcare/pages/pet_training.dart';
+import 'package:wcare/pages/signin.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,7 +27,12 @@ class _HomeState extends State<Home> {
         title: Column(
           children: [
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => SignIn()));
+              },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -86,7 +99,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetGrooming()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -115,7 +135,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetTraining()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -144,7 +171,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    ProductOnestopPetshop()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -173,7 +207,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetBreed()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -202,7 +243,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetHotel()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -231,7 +279,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetSitter()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -260,7 +315,14 @@ class _HomeState extends State<Home> {
                                     color: Color(0xFFA7D7C5),
                                     margin: EdgeInsets.all(10),
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        PetAdopt()));
+                                      },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
                                         child: Column(
@@ -396,132 +458,114 @@ class _HomeState extends State<Home> {
                         height: 20,
                       ),
                       Container(
-                          child: FlatButton(
-                        onPressed: () {},
-                        child: SizedBox(
-                          child: InkWell(
-                            onTap: () {},
-                            splashColor: Colors.greenAccent,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'assets/Petgrooming.png',
-                                    height: 250,
-                                  ),
-                                ],
-                              ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetGrooming()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/Petgrooming.png',
+                                  height: 250,
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      )),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
                       Container(
-                          child: FlatButton(
-                        onPressed: () {},
-                        child: SizedBox(
-                          child: InkWell(
-                            onTap: () {},
-                            splashColor: Colors.greenAccent,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'assets/Petgrooming.png',
-                                    height: 250,
-                                  ),
-                                ],
-                              ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetHotel()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/Petgrooming.png',
+                                  height: 250,
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      )),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
                       Container(
-                          child: FlatButton(
-                        onPressed: () {},
-                        child: SizedBox(
-                          child: InkWell(
-                            onTap: () {},
-                            splashColor: Colors.greenAccent,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'assets/Petgrooming.png',
-                                    height: 250,
-                                  ),
-                                ],
-                              ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetTraining()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/Petgrooming.png',
+                                  height: 250,
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      )),
+                      ),
                       SizedBox(
                         height: 20,
                       ),
                       Container(
-                          child: FlatButton(
-                        onPressed: () {},
-                        child: SizedBox(
-                          child: InkWell(
-                            onTap: () {},
-                            splashColor: Colors.greenAccent,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'assets/Petgrooming.png',
-                                    height: 250,
-                                  ),
-                                ],
-                              ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetAdopt()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/Petgrooming.png',
+                                  height: 250,
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      )),
-                      SizedBox(
-                        height: 20,
                       ),
-                      Container(
-                          child: FlatButton(
-                        onPressed: () {},
-                        child: SizedBox(
-                          child: InkWell(
-                            onTap: () {},
-                            splashColor: Colors.greenAccent,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'assets/Petgrooming.png',
-                                    height: 250,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      )),
                     ]),
               ),
             ),
