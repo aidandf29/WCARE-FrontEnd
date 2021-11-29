@@ -293,8 +293,8 @@ class _HomeState extends State<Home> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
                                             Image.asset(
-                                              'assets/Gecko.png',
-                                              height: 50,
+                                              'assets/gecko.png',
+                                              height: 25,
                                             ),
                                             Text(
                                               "Pet Sitter",
@@ -474,35 +474,7 @@ class _HomeState extends State<Home> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/Petgrooming.png',
-                                  height: 250,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        child: FlatButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        PetHotel()));
-                          },
-                          splashColor: Colors.greenAccent,
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/Petgrooming.png',
+                                  'assets/petgrooming.png',
                                   height: 250,
                                 ),
                               ],
@@ -530,7 +502,7 @@ class _HomeState extends State<Home> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/Petgrooming.png',
+                                  'assets/training.png',
                                   height: 250,
                                 ),
                               ],
@@ -540,6 +512,84 @@ class _HomeState extends State<Home> {
                       ),
                       SizedBox(
                         height: 20,
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        ProductOnestopPetshop()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/onestop.png',
+                                  height: 250,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetHotel()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/hotel2.png',
+                                  height: 250,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetSitter()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/petsitter.png',
+                                  height: 250,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
                         child: FlatButton(
@@ -558,7 +608,51 @@ class _HomeState extends State<Home> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/Petgrooming.png',
+                                  'assets/petadopt.png',
+                                  height: 250,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PetBreed()));
+                          },
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/petbreed.png',
+                                  height: 250,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: FlatButton(
+                          onPressed: () {},
+                          splashColor: Colors.greenAccent,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/comingsoon.png',
                                   height: 250,
                                 ),
                               ],

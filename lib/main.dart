@@ -24,7 +24,7 @@ import 'package:wcare/pages/searchbar.dart';
 import 'package:wcare/pages/navbar.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/adopt',
+      initialRoute: '/advertise',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),

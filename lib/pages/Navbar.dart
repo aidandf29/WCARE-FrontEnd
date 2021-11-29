@@ -4,6 +4,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/Profil.dart';
 import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/pet_grooming.dart';
 
@@ -51,7 +52,7 @@ class _NavbarState extends State<Navbar> {
               color: Colors.green,
             ),
             Container(
-              color: Colors.blue,
+              child: Profil(),
             ),
           ],
         ),

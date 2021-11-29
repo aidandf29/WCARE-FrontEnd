@@ -10,7 +10,7 @@ class PetAdopt extends StatefulWidget {
 
 class _PetAdoptState extends State<PetAdopt> {
   Icon cusIcon = Icon(Icons.search);
-  Widget cusSearchBar = Text("Search");
+  Widget cusSearchBar = Text("Pet Adopt");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,81 +49,58 @@ class _PetAdoptState extends State<PetAdopt> {
           ],
           title: cusSearchBar,
         ),
-        backgroundColor: Color(0xFFD3A500),
-        body: Container(
-          child: GridView.count(
-            crossAxisCount: 1,
-            children: [
-              SizedBox(
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Row(
-                        children: [
-                          Column(
+        backgroundColor: Color(0xFFF6AA15),
+        body: ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                  child: ListTile(
+                    title: Row(
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: ClipRRect(
+                              child: Image.asset('assets/ngadopsi1.png'),
+                              borderRadius: BorderRadius.circular(25)),
+                        ),
+                        Flexible(
+                            child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
                             children: [
-                              Image.asset(
-                                'assets/ngadopsi1.png',
-                                height: 100,
+                              Row(
+                                children: [Text('Arabian Shorthair')],
+                              ),
+                              Row(
+                                children: [Text('Gender: Male')],
+                              ),
+                              Row(
+                                children: [Text('Age: 22 Years')],
+                              ),
+                              Row(
+                                children: [Text('Call: 085157477606')],
                               ),
                             ],
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [Text("Arabic ShortHair")],
-                                  )),
-                              Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 1),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Male",
-                                        textAlign: TextAlign.left,
-                                      )
-                                    ],
-                                  )),
-                              Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [Text("22 Years")],
-                                  )),
-                              Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 10),
-                                  child: Row(
-                                    children: [Text("Contact: 085157477606")],
-                                  )),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(20, 5, 20, 100),
-                                child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.favorite,
-                                    )),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ],
+                        )),
+                        SizedBox(
+                            child: Column(
+                          children: [
+                            IconButton(
+                                padding: EdgeInsets.fromLTRB(30, 5, 0, 70),
+                                onPressed: () {},
+                                icon: Icon(Icons.favorite)),
+                          ],
+                        ))
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ));
+              );
+            }));
   }
 }

@@ -196,6 +196,109 @@ class _PetTrainingState extends State<PetTraining> {
                           )),
                     ),
                     SizedBox(
+                      height: 90,
+                      width: 270,
+                      child: Container(
+                          alignment: Alignment.topCenter,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                            child: GridView.count(
+                              crossAxisCount: 3,
+                              children: <Widget>[
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25)),
+                                  color: Color(0xFFA7D7C5),
+                                  margin: EdgeInsets.all(10),
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    focusColor: Colors.grey,
+                                    splashColor: Colors.grey,
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            'Get the Cat',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontFamily: 'PTSerifCaption',
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25)),
+                                  color: Color(0xFFA7D7C5),
+                                  margin: EdgeInsets.all(10),
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    focusColor: Colors.grey,
+                                    splashColor: Colors.grey,
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            'Get the Bird',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontFamily: 'PTSerifCaption',
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25)),
+                                  color: Color(0xFFA7D7C5),
+                                  margin: EdgeInsets.all(10),
+                                  child: FlatButton(
+                                    onPressed: () {},
+                                    focusColor: Colors.grey,
+                                    splashColor: Colors.grey,
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: <Widget>[
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            'Get the Dog',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontFamily: 'PTSerifCaption',
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )),
+                    ),
+                    SizedBox(
                       height: 30,
                     ),
                     FlatButton(
