@@ -59,16 +59,13 @@ class _AdvertiseState extends State<Advertise> {
               ),
             ),
             SizedBox(
-              height: 30,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(25)),
-              child: Container(
-                height: 100,
-                width: 250,
-              ),
-            )
+                height: 200,
+                child: TextField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                ))
           ],
         )),
       ),
