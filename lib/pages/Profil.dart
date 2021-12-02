@@ -30,7 +30,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin{
           Column(
             children: <Widget>[
               new Container(
-                height: 350.0,
+                height: 310.0,
                 
                 decoration:  BoxDecoration(
                    borderRadius : BorderRadius.only(
@@ -45,15 +45,15 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin{
                   children: <Widget>[
                     
                     Padding(
-                      padding: EdgeInsets.only(top: 40.0),
+                      padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 25.0),
                       child: new Stack(fit: StackFit.loose, children: <Widget>[
                         new Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             new Container(
-                                width: 140.0,
-                                height: 140.0,
+                                width: 180.0,
+                                height: 180.0,
                                 decoration: new BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: new DecorationImage(
@@ -64,26 +64,43 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin{
                                 )),
                           ],
                         ),
-                       
-                        // Padding(
-                        //     padding: EdgeInsets.only(top: 90.0, right: 100.0),
-                        //     child: new Row(
-                        //       mainAxisAlignment: MainAxisAlignment.center,
-                        //       children: <Widget>[
-                        //         new CircleAvatar(
-                        //           backgroundColor: Colors.red,
-                        //           radius: 25.0,
-                        //           child: new Icon(
-                        //             Icons.camera_alt,
-                        //             color: Colors.white,
-                        //           ),
-                        //         )
-                        //       ],
-                        //     )),
                       ]),
-                    )
-                  ],
-                ),
+                    ),
+                     
+                        new Row(
+                          
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Icon(
+                                Icons.favorite,
+                                color: Colors.black,
+                                size:38.0,
+                              ),
+                            ),
+
+                            CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Icon(
+                                Icons.history,
+                                color: Colors.black,
+                                size:38.0,
+                              ),
+                            ),
+
+                            CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Icon(
+                                Icons.shopping_basket,
+                                color: Colors.black,
+                                size:38.0,
+                              ),
+                            ),
+                          ]
+                       ),
+                  
+                  ]),
               ),
               new Container(
                 color: Colors.white,
@@ -281,9 +298,10 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin{
               )
             ],
           ),
-        ],
-      ),
-    ));
+      
+        ])
+      )
+    );
   }
 
   @override

@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              color: Colors.white,
+              color: Color(0x0ff4f9f4),
               child: Text(
                 'Logout',
                 style: TextStyle(
@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Container(
-        color: Colors.white,
+        color: Color(0x0ff4f9f4),
         alignment: Alignment.center,
         child: Stack(
           children: [
@@ -383,6 +383,7 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: 30,
                         child: Container(
+                          margin: const EdgeInsets.only(left :10.0),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'WCARE Nearby',
