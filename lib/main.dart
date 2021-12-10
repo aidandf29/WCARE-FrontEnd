@@ -24,7 +24,7 @@ import 'package:wcare/pages/searchbar.dart';
 import 'package:wcare/pages/navbar.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/grooming',
+      initialRoute: '/signin',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),
