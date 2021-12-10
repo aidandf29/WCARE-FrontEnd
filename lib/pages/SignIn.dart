@@ -54,20 +54,6 @@ class _SignInState extends State<SignIn> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            FlatButton(
-                              onPressed: () {},
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
-                              color: Colors.white,
-                              child: Text(
-                                'Continue With Google',
-                                style: TextStyle(
-                                    fontFamily: 'PTSerifCaption',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14),
-                              ),
-                              splashColor: Colors.greenAccent,
-                            ),
                             SizedBox(
                               height: 10,
                             ),

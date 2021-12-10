@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/dummy.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class ProductOnestopPetshop extends StatefulWidget {
@@ -49,8 +50,9 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
         ),
         backgroundColor: Color(0xFF7CABA7),
         body: ListView.builder(
-            itemCount: 5,
+            itemCount: Shop.generatedShop.length,
             itemBuilder: (context, index) {
+              final item = Shop.generatedShop[index];
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
                 child: Card(
@@ -62,9 +64,7 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
                         SizedBox(
                           width: 100,
                           child: ClipRRect(
-                              child: Image.asset(
-                                'assets/sisir1.png',
-                              ),
+                              child: Image.network(item.imgUrl),
                               borderRadius: BorderRadius.circular(25)),
                         ),
                         Flexible(
@@ -73,13 +73,13 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
                           child: Column(
                             children: [
                               Row(
-                                children: [Text('Sisir Bulu')],
+                                children: [Text(item.jenis)],
                               ),
                               Row(
-                                children: [Text('Rp. 19.999')],
+                                children: [Text(item.harga)],
                               ),
                               Row(
-                                children: [Text('Stok: 10')],
+                                children: [Text(item.stok)],
                               ),
                               Row(
                                 children: [
@@ -100,15 +100,6 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
                             ],
                           ),
                         )),
-                        SizedBox(
-                            child: Column(
-                          children: [
-                            IconButton(
-                                padding: EdgeInsets.fromLTRB(30, 5, 0, 70),
-                                onPressed: () {},
-                                icon: Icon(Icons.favorite)),
-                          ],
-                        ))
                       ],
                     ),
                   ),

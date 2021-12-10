@@ -54,20 +54,6 @@ class _SignUpState extends State<SignUp> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            FlatButton(
-                              onPressed: () {},
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
-                              color: Colors.white,
-                              child: Text(
-                                'Continue With Google',
-                                style: TextStyle(
-                                    fontFamily: 'PTSerifCaption',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14),
-                              ),
-                              splashColor: Colors.greenAccent,
-                            ),
                             SizedBox(
                               height: 10,
                             ),
@@ -163,44 +149,6 @@ class _SignUpState extends State<SignUp> {
                                       ),
                                       labelText: "Password",
                                       hintText: "8 Letter",
-                                      labelStyle: TextStyle(
-                                          fontFamily: 'PTSerifCaption',
-                                          fontSize: 14),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                          // ignore: prefer_const_constructors
-                                          borderSide: BorderSide(
-                                            color: Colors.grey,
-                                            width: 2.0,
-                                          )),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                        // ignore: prefer_const_constructors
-                                        borderSide: BorderSide(
-                                            color: Colors.black, width: 1.0),
-                                      )),
-                                  keyboardType: TextInputType.text),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(25)),
-                              margin: EdgeInsets.symmetric(
-                                vertical: 5,
-                                horizontal: 20,
-                              ),
-                              padding: EdgeInsets.all(0),
-                              height: 30,
-                              width: 250,
-                              child: TextField(
-                                  obscureText: isHiddenPassword,
-                                  decoration: InputDecoration(
-                                      labelText: "Confirm Password",
-                                      suffixIcon: InkWell(
-                                        onTap: _togglePasswordView,
-                                        child: Icon(Icons.visibility),
-                                      ),
                                       labelStyle: TextStyle(
                                           fontFamily: 'PTSerifCaption',
                                           fontSize: 14),
