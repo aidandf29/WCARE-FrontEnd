@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wcare/atest/item_list.dart';
 
 //import pages
 import 'package:wcare/pages/activity_page.dart';
@@ -23,13 +24,15 @@ import 'package:wcare/pages/wishlist.dart';
 import 'package:wcare/pages/searchbar.dart';
 import 'package:wcare/pages/navbar.dart';
 
+import 'atest/checkout_page.dart';
+
 void main() => runApp(MaterialApp(
-      initialRoute: '/grooming',
+      initialRoute: '/itemlist',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),
         '/advertise': (context) => Advertise(),
-        '/checkout': (context) => Checkout(),
+        // '/checkout': (context) => Checkout(),
         '/edit_profil': (context) => EditProfil(),
         '/home': (context) => Home(),
         '/paymentdetails': (context) => PaymentDetails(),
@@ -48,5 +51,8 @@ void main() => runApp(MaterialApp(
         '/wishlist': (context) => Wishlist(),
         '/searchbar': (context) => Searchbar(),
         '/navbar': (context) => Navbar(),
+        '/itemlist': (context) => ItemList(),
+        '/itemcheckout': (context) =>  ItemCheckout(),
+
       },
     ));
