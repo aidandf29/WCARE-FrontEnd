@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/dummy.dart';
 import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/pages/signin.dart';
+import 'package:wcare/pages/dummy.dart';
 
 class PetBreed extends StatefulWidget {
   @override
@@ -49,10 +51,11 @@ class _PetBreedState extends State<PetBreed> {
           ],
           title: cusSearchBar,
         ),
-        backgroundColor: Color(0xFF83D300),
+        backgroundColor: Color(0xFF639D03),
         body: ListView.builder(
-            itemCount: 5,
+            itemCount: Breed.generatedBreed.length,
             itemBuilder: (context, index) {
+              final item = Breed.generatedBreed[index];
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
                 child: Card(
@@ -64,7 +67,7 @@ class _PetBreedState extends State<PetBreed> {
                         SizedBox(
                           width: 100,
                           child: ClipRRect(
-                              child: Image.asset('assets/ngadopsi1.png'),
+                              child: Image.network(item.imgUrl),
                               borderRadius: BorderRadius.circular(25)),
                         ),
                         Flexible(
@@ -73,29 +76,20 @@ class _PetBreedState extends State<PetBreed> {
                           child: Column(
                             children: [
                               Row(
-                                children: [Text('Arabian Shorthair')],
+                                children: [Text(item.jenis)],
                               ),
                               Row(
-                                children: [Text('Gender: Male')],
+                                children: [Text(item.gender)],
                               ),
                               Row(
-                                children: [Text('Age: 22 Years')],
+                                children: [Text(item.umur)],
                               ),
                               Row(
-                                children: [Text('Call: 085157477606')],
+                                children: [Text(item.telepon)],
                               ),
                             ],
                           ),
                         )),
-                        SizedBox(
-                            child: Column(
-                          children: [
-                            IconButton(
-                                padding: EdgeInsets.fromLTRB(30, 5, 0, 70),
-                                onPressed: () {},
-                                icon: Icon(Icons.favorite)),
-                          ],
-                        ))
                       ],
                     ),
                   ),

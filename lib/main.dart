@@ -33,6 +33,7 @@ import 'servicePage/hotel_list/hotel_list.dart';
 
 void main() => runApp(MaterialApp(
       initialRoute: '/itemlist',
+      
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),

@@ -316,44 +316,6 @@ class _PetGroomingState extends State<PetGrooming> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
                       padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 60),
-                      color: Color(0xFFA7D7C5),
-                      child: Text(
-                        'Pick up',
-                        style: TextStyle(
-                            fontFamily: 'PTSerifCaption',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      splashColor: Colors.greenAccent,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 80),
-                      color: Color(0xFFA7D7C5),
-                      child: Text(
-                        'Delivered',
-                        style: TextStyle(
-                            fontFamily: 'PTSerifCaption',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      splashColor: Colors.greenAccent,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      padding:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 100),
                       color: Color(0xFFA7D7C5),
                       child: Text(

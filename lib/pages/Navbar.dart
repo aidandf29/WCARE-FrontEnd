@@ -49,9 +49,6 @@ class _NavbarState extends State<Navbar> {
               child: PetGrooming(),
             ),
             Container(
-              color: Colors.green,
-            ),
-            Container(
               child: Profil(),
             ),
           ],
@@ -79,23 +76,12 @@ class _NavbarState extends State<Navbar> {
           BottomNavyBarItem(
               title: Container(
                 padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                child: Text('History',
+                child: Text('Status',
                     style: TextStyle(
                         color: Colors.black, fontFamily: 'PTSerifCaption')),
               ),
               icon: Icon(
-                Icons.history,
-                color: Colors.black,
-              )),
-          BottomNavyBarItem(
-              title: Container(
-                padding: EdgeInsets.fromLTRB(18, 0, 0, 0),
-                child: Text('Likes',
-                    style: TextStyle(
-                        color: Colors.black, fontFamily: 'PTSerifCaption')),
-              ),
-              icon: Icon(
-                Icons.favorite,
+                Icons.shopping_cart,
                 color: Colors.black,
               )),
           BottomNavyBarItem(

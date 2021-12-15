@@ -10,10 +10,10 @@ class Item {
   final String desc;
 
   const Item(
-      {required this.imgUrl,
-      required this.name,
-      required this.price,
-      required this.desc});
+      { this.imgUrl,
+       this.name,
+       this.price,
+       this.desc});
   static const List<Item> generatedItem = [
     Item(
         imgUrl: product1,
