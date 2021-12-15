@@ -48,7 +48,7 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
           ],
           title: cusSearchBar,
         ),
-        backgroundColor: Color(0xFF7CABA7),
+        backgroundColor: Colors.white,
         body: ListView.builder(
             itemCount: Shop.generatedShop.length,
             itemBuilder: (context, index) {
@@ -56,6 +56,7 @@ class _ProductOnestopPetshopState extends State<ProductOnestopPetshop> {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
                 child: Card(
+                  color: Color(0xFF74B49B),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25)),
                   child: ListTile(

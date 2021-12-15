@@ -50,7 +50,7 @@ class _PetAdoptState extends State<PetAdopt> {
           ],
           title: cusSearchBar,
         ),
-        backgroundColor: Color(0xFFF6AA15),
+        backgroundColor: Colors.white,
         body: ListView.builder(
             itemCount: Hewan.generatedHewan.length,
             itemBuilder: (context, index) {
@@ -58,6 +58,7 @@ class _PetAdoptState extends State<PetAdopt> {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
                 child: Card(
+                  color: Color(0xFF74B49B),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25)),
                   child: ListTile(

@@ -51,7 +51,7 @@ class _PetBreedState extends State<PetBreed> {
           ],
           title: cusSearchBar,
         ),
-        backgroundColor: Color(0xFF639D03),
+        backgroundColor: Colors.white,
         body: ListView.builder(
             itemCount: Breed.generatedBreed.length,
             itemBuilder: (context, index) {
@@ -59,6 +59,7 @@ class _PetBreedState extends State<PetBreed> {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 0),
                 child: Card(
+                  color: Color(0xFF74B49B),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25)),
                   child: ListTile(
