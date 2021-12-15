@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'package:get/get.dart';
-import 'package:wcare/pages/Item.dart';
-
+import 'package:wcare/servicePage/Item.dart';
 
 class cartController extends GetxController {
   var _items = {}.obs;
+  var _breeds = {}.obs;
   // RxInt total = 0.obs;
 
   void addItem(Item item) {
@@ -23,11 +23,13 @@ class cartController extends GetxController {
     );
   }
 
+  
+
   void removeItem(Item item) {
-    if (_items.containsKey(item) && _items[item] == 1) {
-      _items.removeWhere((key, value) => key == item);
+    if (_breeds.containsKey(item) && _items[item] == 1) {
+      _breeds.removeWhere((key, value) => key == item);
     } else {
-      _items[item] -= 1;
+      _breeds[item] -= 1;
     }
 
     Get.snackbar(
@@ -39,7 +41,10 @@ class cartController extends GetxController {
     );
   }
 
+  
+
   get foods => _items;
+  get breeds => _breeds;
 
   get itemSubtotal =>
       _items.entries.map((item) => item.key.price * item.value).toList();
@@ -74,6 +79,13 @@ class cartController extends GetxController {
           ' ' +
           (item.key.price * item.value).toString())
       .toList();
+
+
+
+
+
+
+
 
   // foodlist() {
   //   var list = _items.entries

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:wcare/atest/controller.dart';
-import 'package:wcare/pages/Item.dart';
+import 'package:wcare/servicePage/controller.dart';
+import 'package:wcare/servicePage/Item.dart';
 
 class CartProducts extends StatelessWidget {
   final cartController controller = Get.find();
@@ -26,6 +26,7 @@ class CartProducts extends StatelessWidget {
                   index: index,
                 );
               }),
+              
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
-import 'package:wcare/pages/Item.dart';
+import 'package:wcare/servicePage/Item.dart';
 
 class calcCheckout extends GetxController {
   var _items = {}.obs;

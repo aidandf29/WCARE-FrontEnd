@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wcare/atest/controller.dart';
+import 'package:wcare/servicePage/controller.dart';
 
 
 class CartTotal extends StatelessWidget {

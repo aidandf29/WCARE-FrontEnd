@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wcare/atest/item_list.dart';
+import 'package:wcare/pages/checkout/checkout_page.dart';
+import 'package:wcare/servicePage/grooming_list/grooming_list.dart';
+import 'package:wcare/servicePage/petshop_list/petshop_list.dart';
 
 //import pages
 import 'package:wcare/pages/activity_page.dart';
@@ -23,8 +25,11 @@ import 'package:wcare/pages/signup.dart';
 import 'package:wcare/pages/wishlist.dart';
 import 'package:wcare/pages/searchbar.dart';
 import 'package:wcare/pages/navbar.dart';
+import 'package:wcare/servicePage/sitter_list/sitter_list.dart';
+import 'package:wcare/servicePage/training_list/training_list.dart';
 
-import 'atest/checkout_page.dart';
+import 'servicePage/hotel_list/hotel_list.dart';
+
 
 void main() => runApp(MaterialApp(
       initialRoute: '/itemlist',
@@ -51,8 +56,13 @@ void main() => runApp(MaterialApp(
         '/wishlist': (context) => Wishlist(),
         '/searchbar': (context) => Searchbar(),
         '/navbar': (context) => Navbar(),
+        '/hotellist': (context) => HotelList(),
+        '/groominglist': (context) => GroomingList(),
+        '/sitterlist': (context) => SitterList(),
+        '/traininglist': (context) => TrainingList(),
         '/itemlist': (context) => ItemList(),
         '/itemcheckout': (context) =>  ItemCheckout(),
+        
 
       },
     ));

@@ -17,9 +17,9 @@ class ItemCheckout extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFFF5C901),
+                      color: Color(0xFFA7D7C5),
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(40),
+                        bottomLeft: Radius.circular(10),
                       ),
                     ),
                     height: 80,
@@ -35,7 +35,7 @@ class ItemCheckout extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              'Your Cart',
+                              'Cart',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 24,
@@ -61,6 +61,8 @@ class ItemCheckout extends StatelessWidget {
                 ),
               ),
               CartProducts(),
+              // ignore: prefer_const_constructors
+              SizedBox(height: 160,),
               CartTotal(),
             ],
           ),
