@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wcare/pages/checkout/checkout_page.dart';
+import 'package:wcare/pages/wishlist/wishlist_page.dart';
 import 'package:wcare/servicePage/grooming_list/grooming_list.dart';
 import 'package:wcare/servicePage/petshop_list/petshop_list.dart';
 
@@ -63,7 +64,7 @@ void main() => runApp(MaterialApp(
         '/traininglist': (context) => TrainingList(),
         '/itemlist': (context) => ItemList(),
         '/itemcheckout': (context) =>  ItemCheckout(),
-        
+        '/itemwishlist':(context) => ItemWishlist(),
 
       },
     ));

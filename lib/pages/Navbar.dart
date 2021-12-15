@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:wcare/pages/Profil.dart';
 import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/pet_grooming.dart';
+import '../controller/controller_cart.dart';
 
 class Navbar extends StatefulWidget {
   @override
