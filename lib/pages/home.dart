@@ -10,6 +10,7 @@ import 'package:wcare/pages/pet_hotel.dart';
 import 'package:wcare/pages/pet_sitter.dart';
 import 'package:wcare/pages/pet_training.dart';
 import 'package:wcare/pages/signin.dart';
+import 'package:wcare/servicePage/petshop_list/petshop_list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -175,9 +176,9 @@ class _HomeState extends State<Home> {
                                         Navigator.pushReplacement(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (BuildContext
-                                                        context) =>
-                                                    ProductOnestopPetshop()));
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        ItemList()));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -383,7 +384,7 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: 30,
                         child: Container(
-                          margin: const EdgeInsets.only(left :10.0),
+                          margin: const EdgeInsets.only(left: 10.0),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'WCARE Nearby',

@@ -7,7 +7,7 @@ import 'package:wcare/servicePage/Item.dart';
 class CartProducts extends StatelessWidget {
   final cartController controller = Get.find();
 
-  CartProducts({Key? key}) : super(key: key);
+  CartProducts({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,23 +15,20 @@ class CartProducts extends StatelessWidget {
     return Obx(
       () => SizedBox(
         height: c_height,
-        child: 
-              ListView.builder(
-              itemCount: controller.foods.length,
-              itemBuilder: (BuildContext context, int index) {
-                return CartProductCard(
-                  controller: controller,
-                  item: controller.foods.keys.toList()[index],
-                  quantity: controller.foods.values.toList()[index],
-                  index: index,
-                );
-              }),
-              
+        child: ListView.builder(
+            itemCount: controller.foods.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CartProductCard(
+                controller: controller,
+                item: controller.foods.keys.toList()[index],
+                quantity: controller.foods.values.toList()[index],
+                index: index,
+              );
+            }),
       ),
     );
   }
 }
-
 
 class CartProductCard extends StatelessWidget {
   final cartController controller;
@@ -40,11 +37,11 @@ class CartProductCard extends StatelessWidget {
   final int index;
 
   const CartProductCard({
-    Key? key,
-    required this.controller,
-    required this.item,
-    required this.quantity,
-    required this.index,
+    Key key,
+    this.controller,
+    this.item,
+    this.quantity,
+    this.index,
   }) : super(key: key);
 
   @override

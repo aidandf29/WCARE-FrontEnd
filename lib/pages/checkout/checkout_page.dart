@@ -3,7 +3,7 @@ import 'checkout_item.dart';
 import 'checkout_total.dart';
 
 class ItemCheckout extends StatelessWidget {
-  const ItemCheckout({Key? key}) : super(key: key);
+  const ItemCheckout({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,9 @@ class ItemCheckout extends StatelessWidget {
               ),
               CartProducts(),
               // ignore: prefer_const_constructors
-              SizedBox(height: 160,),
+              SizedBox(
+                height: 160,
+              ),
               CartTotal(),
             ],
           ),

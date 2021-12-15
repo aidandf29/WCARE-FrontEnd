@@ -1,12 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:get/get.dart';
 import 'dart:ui';
-
+import 'package:wcare/servicePage/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:wcare/pages/Profil.dart';
+import 'package:wcare/pages/checkout/checkout_page.dart';
 import 'package:wcare/pages/home.dart';
-import 'package:wcare/pages/pet_grooming.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class Navbar extends StatefulWidget {
 
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
+  final CartController = Get.put(cartController());
 
   var _pageController;
 
@@ -46,7 +48,7 @@ class _NavbarState extends State<Navbar> {
               child: Home(),
             ),
             Container(
-              child: PetGrooming(),
+              child: ItemCheckout(),
             ),
             Container(
               child: Profil(),
@@ -93,6 +95,17 @@ class _NavbarState extends State<Navbar> {
               ),
               icon: Icon(
                 Icons.person,
+                color: Colors.black,
+              )),
+          BottomNavyBarItem(
+              title: Container(
+                padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: Text('Likes',
+                    style: TextStyle(
+                        color: Colors.black, fontFamily: 'PTSerifCaption')),
+              ),
+              icon: Icon(
+                Icons.favorite,
                 color: Colors.black,
               )),
         ],

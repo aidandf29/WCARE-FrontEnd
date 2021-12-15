@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wcare/pages/pet_grooming.dart';
 import 'package:wcare/servicePage/controller.dart';
 
 // import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -23,6 +24,35 @@ class _GroomingList extends State<GroomingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(
+          0xFFA7D7C5,
+        ),
+        title: Column(
+          children: [
+            FlatButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => PetGrooming()));
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              color: Color(0xFF74B49B),
+              child: Text(
+                'Back',
+                style: TextStyle(
+                    fontFamily: 'PTSerifCaption',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
+              splashColor: Colors.greenAccent,
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Padding(

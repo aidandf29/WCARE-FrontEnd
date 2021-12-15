@@ -30,14 +30,8 @@ import 'package:wcare/servicePage/training_list/training_list.dart';
 
 import 'servicePage/hotel_list/hotel_list.dart';
 
-
 void main() => runApp(MaterialApp(
-<<<<<<< HEAD
-      initialRoute: '/home',
-=======
-      initialRoute: '/itemlist',
-      
->>>>>>> 80211bce620ea8ed8e0e80b8e422a8114606ab9b
+      initialRoute: '/navbar',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),
@@ -66,8 +60,6 @@ void main() => runApp(MaterialApp(
         '/sitterlist': (context) => SitterList(),
         '/traininglist': (context) => TrainingList(),
         '/itemlist': (context) => ItemList(),
-        '/itemcheckout': (context) =>  ItemCheckout(),
-        
-
+        '/itemcheckout': (context) => ItemCheckout(),
       },
     ));

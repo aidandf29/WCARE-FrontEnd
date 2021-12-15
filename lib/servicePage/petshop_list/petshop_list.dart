@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:wcare/pages/navbar.dart';
 import 'package:get/get.dart';
 import 'package:wcare/servicePage/controller.dart';
 
@@ -19,24 +19,52 @@ class _ItemList extends State<ItemList> {
   final CartController = Get.put(cartController());
   // Timer? debouncer;
   // bool loading = true;
-
+  Icon cusIcon = Icon(Icons.search);
+  Widget cusSearchBar = Text("One Stop Petshop");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFA7D7C5),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => Navbar()));
+            },
+            icon: Icon(Icons.arrow_back)),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              setState(() {
+                if (this.cusIcon.icon == Icons.search) {
+                  this.cusIcon = Icon(Icons.cancel);
+                  this.cusSearchBar = TextField(
+                    decoration: InputDecoration(
+                        border: InputBorder.none, hintText: "Search Pet"),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  );
+                } else {
+                  this.cusIcon = Icon(Icons.search);
+                  this.cusSearchBar = Text("search");
+                }
+              });
+            },
+            icon: cusIcon,
+          ),
+        ],
+        title: cusSearchBar,
+      ),
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20, bottom: 15),
+            padding: EdgeInsets.only(left: 20, bottom: 25),
             child: Row(
-              children: [
-                Text(
-                  'Menu',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20,
-                  ),
-                ),
-              ],
+              children: [],
             ),
           ),
           Expanded(
