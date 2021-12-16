@@ -1,20 +1,28 @@
 // ignore_for_file: file_names
 
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'dart:ui';
-
+import 'package:get/get.dart';
+import 'package:wcare/controller/controller_cart.dart';
+import 'package:wcare/controller/controller_wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:wcare/pages/Profil.dart';
+import 'package:wcare/pages/checkout/checkout_item.dart';
+import 'package:wcare/pages/checkout/checkout_page.dart';
 import 'package:wcare/pages/home.dart';
-import 'package:wcare/pages/pet_grooming.dart';
+import 'package:wcare/pages/wishlist/wishlist_item.dart';
+import 'package:wcare/pages/wishlist/wishlist_page.dart';
 
 class Navbar extends StatefulWidget {
+  const Navbar({Key key}) : super(key: key);
+
   @override
   _NavbarState createState() => _NavbarState();
 }
 
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
+  final CartController = Get.put(cartController());
+  final WishlistController = Get.put(wishlistController());
 
   var _pageController;
 
@@ -46,15 +54,15 @@ class _NavbarState extends State<Navbar> {
               child: Home(),
             ),
             Container(
-              child: PetGrooming(),
-            ),
-            Container(
-              color: Colors.green,
+              child: ItemCheckout(),
             ),
             Container(
               child: Profil(
                 id: '',
               ),
+            ),
+            Container(
+              child: ItemWishlist(),
             ),
           ],
         ),
@@ -81,23 +89,12 @@ class _NavbarState extends State<Navbar> {
           BottomNavyBarItem(
               title: Container(
                 padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                child: Text('History',
+                child: Text('Status',
                     style: TextStyle(
                         color: Colors.black, fontFamily: 'PTSerifCaption')),
               ),
               icon: Icon(
-                Icons.history,
-                color: Colors.black,
-              )),
-          BottomNavyBarItem(
-              title: Container(
-                padding: EdgeInsets.fromLTRB(18, 0, 0, 0),
-                child: Text('Likes',
-                    style: TextStyle(
-                        color: Colors.black, fontFamily: 'PTSerifCaption')),
-              ),
-              icon: Icon(
-                Icons.favorite,
+                Icons.shopping_cart,
                 color: Colors.black,
               )),
           BottomNavyBarItem(
@@ -109,6 +106,17 @@ class _NavbarState extends State<Navbar> {
               ),
               icon: Icon(
                 Icons.person,
+                color: Colors.black,
+              )),
+          BottomNavyBarItem(
+              title: Container(
+                padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: Text('Likes',
+                    style: TextStyle(
+                        color: Colors.black, fontFamily: 'PTSerifCaption')),
+              ),
+              icon: Icon(
+                Icons.favorite,
                 color: Colors.black,
               )),
         ],
