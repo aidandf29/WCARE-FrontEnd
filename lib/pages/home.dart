@@ -522,7 +522,7 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        ProductOnestopPetshop()));
+                                        ItemList()));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(

@@ -200,9 +200,6 @@ class _PetHotelState extends State<PetHotel> {
                     SizedBox(
                       height: 30,
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
                     FlatButton(
                       onPressed: () {
                         Navigator.pushReplacement(
