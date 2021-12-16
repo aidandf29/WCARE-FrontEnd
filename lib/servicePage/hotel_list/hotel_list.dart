@@ -22,7 +22,7 @@ class _HotelList extends State<HotelList> {
   // Timer? debouncer;
   // bool loading = true;
   Icon cusIcon = Icon(Icons.search);
-  Widget cusSearchBar = Text("One Stop Petshop");
+  Widget cusSearchBar = Text("Pet Hotel");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
