@@ -5,6 +5,8 @@ import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/pages/searchbar.dart';
 
 class PetAdopt extends StatefulWidget {
+  late final String id;
+  PetAdopt({required this.id});
   @override
   _PetAdoptState createState() => _PetAdoptState();
 }
@@ -22,7 +24,8 @@ class _PetAdoptState extends State<PetAdopt> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               icon: Icon(Icons.arrow_back)),
           actions: <Widget>[

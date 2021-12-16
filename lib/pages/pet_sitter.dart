@@ -4,6 +4,8 @@ import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/servicePage/sitter_list/sitter_list.dart';
 
 class PetSitter extends StatefulWidget {
+  late final String id;
+  PetSitter({required this.id});
   @override
   _PetSitterState createState() => _PetSitterState();
 }
@@ -56,7 +58,8 @@ class _PetSitterState extends State<PetSitter> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
@@ -204,8 +207,9 @@ class _PetSitterState extends State<PetSitter> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    SitterList()));
+                                builder: (BuildContext context) => SitterList(
+                                      id: widget.id,
+                                    )));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),

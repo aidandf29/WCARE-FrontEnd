@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class Wishlist extends StatefulWidget {
+  late final String id;
+  Wishlist({required this.id});
   @override
   _WishlistState createState() => _WishlistState();
 }
@@ -19,7 +21,8 @@ class _WishlistState extends State<Wishlist> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               icon: Icon(Icons.arrow_back)),
           actions: <Widget>[

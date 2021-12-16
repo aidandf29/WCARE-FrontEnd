@@ -4,6 +4,8 @@ import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/servicePage/training_list/training_list.dart';
 
 class PetTraining extends StatefulWidget {
+  late final String id;
+  PetTraining({required this.id});
   @override
   _PetTrainingState createState() => _PetTrainingState();
 }
@@ -56,7 +58,8 @@ class _PetTrainingState extends State<PetTraining> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
@@ -204,8 +207,9 @@ class _PetTrainingState extends State<PetTraining> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    TrainingList()));
+                                builder: (BuildContext context) => TrainingList(
+                                      id: widget.id,
+                                    )));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),

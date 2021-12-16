@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class Advertise extends StatefulWidget {
+  late final String id;
+  Advertise({required this.id});
   @override
   _AdvertiseState createState() => _AdvertiseState();
 }
@@ -19,7 +21,8 @@ class _AdvertiseState extends State<Advertise> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => Navbar()));
+                      builder: (BuildContext context) =>
+                          Navbar(id: widget.id)));
             },
             icon: Icon(Icons.arrow_back)),
         actions: <Widget>[

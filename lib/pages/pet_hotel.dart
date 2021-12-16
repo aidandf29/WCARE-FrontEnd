@@ -5,6 +5,8 @@ import 'package:wcare/servicePage/hotel_list/hotel_list.dart';
 import 'package:wcare/servicePage/training_list/training_list.dart';
 
 class PetHotel extends StatefulWidget {
+  late final String id;
+  PetHotel({required this.id});
   @override
   _PetHotelState createState() => _PetHotelState();
 }
@@ -57,7 +59,8 @@ class _PetHotelState extends State<PetHotel> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
@@ -205,8 +208,9 @@ class _PetHotelState extends State<PetHotel> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    HotelList()));
+                                builder: (BuildContext context) => HotelList(
+                                      id: widget.id,
+                                    )));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),

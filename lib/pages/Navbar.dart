@@ -13,7 +13,9 @@ import 'package:wcare/pages/wishlist/wishlist_item.dart';
 import 'package:wcare/pages/wishlist/wishlist_page.dart';
 
 class Navbar extends StatefulWidget {
-  const Navbar({Key ? key}) : super(key: key);
+  late final String id;
+  Navbar({required this.id});
+  // const Navbar({Key ? key}) : super(key: key);
 
   @override
   _NavbarState createState() => _NavbarState();
@@ -51,18 +53,24 @@ class _NavbarState extends State<Navbar> {
           },
           children: <Widget>[
             Container(
-              child: Home(),
-            ),
-            Container(
-              child: ItemCheckout(),
-            ),
-            Container(
-              child: Profil(
-                id: '',
+              child: Home(
+                id: widget.id,
               ),
             ),
             Container(
-              child: ItemWishlist(),
+              child: ItemCheckout(
+                id: widget.id,
+              ),
+            ),
+            Container(
+              child: Profil(
+                id: widget.id,
+              ),
+            ),
+            Container(
+              child: ItemWishlist(
+                id: widget.id,
+              ),
             ),
           ],
         ),

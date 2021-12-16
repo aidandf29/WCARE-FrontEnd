@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:wcare/pages/wishlist/wishlist_item.dart';
 import 'package:wcare/pages/navbar.dart';
 
-class ItemWishlist extends StatelessWidget {
-  const ItemWishlist({Key? key}) : super(key: key);
+class ItemWishlist extends StatefulWidget {
+  late final String id;
+  ItemWishlist({required this.id});
 
+  @override
+  State<ItemWishlist> createState() => _ItemWishlistState();
+}
+
+class _ItemWishlistState extends State<ItemWishlist> {
+  // const ItemWishlist({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +41,7 @@ class ItemWishlist extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          Navbar()));
+                                          Navbar(id: widget.id)));
                             },
                             icon: Icon(Icons.arrow_back)),
                         SizedBox(

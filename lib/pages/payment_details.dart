@@ -4,7 +4,9 @@ import 'package:get/get_navigation/src/routes/default_transitions.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class PaymentDetails extends StatefulWidget {
-  const PaymentDetails({Key ? key}) : super(key: key);
+  late final String id;
+  PaymentDetails({required this.id});
+  // const PaymentDetails({Key? key}) : super(key: key);
 
   @override
   _PaymentDetailsState createState() => _PaymentDetailsState();
@@ -37,7 +39,8 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) => Navbar()));
+                                builder: (BuildContext context) =>
+                                    Navbar(id: widget.id)));
                       },
                       child: Row(
                         children: <Widget>[

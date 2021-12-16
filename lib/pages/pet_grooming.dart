@@ -8,6 +8,8 @@ import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/servicePage/grooming_list/grooming_list.dart';
 
 class PetGrooming extends StatefulWidget {
+  late final String id;
+  PetGrooming({required this.id});
   @override
   _PetGroomingState createState() => _PetGroomingState();
 }
@@ -60,7 +62,8 @@ class _PetGroomingState extends State<PetGrooming> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)),
@@ -211,8 +214,9 @@ class _PetGroomingState extends State<PetGrooming> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    GroomingList()));
+                                builder: (BuildContext context) => GroomingList(
+                                      id: widget.id,
+                                    )));
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
