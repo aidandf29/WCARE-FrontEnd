@@ -3,7 +3,7 @@ import 'package:wcare/pages/wishlist/wishlist_item.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class ItemWishlist extends StatelessWidget {
-  const ItemWishlist({Key key}) : super(key: key);
+  const ItemWishlist({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

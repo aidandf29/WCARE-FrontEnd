@@ -32,7 +32,7 @@ import 'package:wcare/servicePage/training_list/training_list.dart';
 import 'servicePage/hotel_list/hotel_list.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/navbar',
+      initialRoute: '/signin',
       routes: {
         // '/': (context) => Activity(),
         '/activity': (context) => Activity(),

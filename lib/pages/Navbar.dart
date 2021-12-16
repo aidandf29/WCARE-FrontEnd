@@ -13,7 +13,7 @@ import 'package:wcare/pages/wishlist/wishlist_item.dart';
 import 'package:wcare/pages/wishlist/wishlist_page.dart';
 
 class Navbar extends StatefulWidget {
-  const Navbar({Key key}) : super(key: key);
+  const Navbar({Key ? key}) : super(key: key);
 
   @override
   _NavbarState createState() => _NavbarState();

@@ -7,7 +7,7 @@ import 'package:wcare/pages/user.dart';
 import 'package:http/http.dart' as http;
 
 class SignUp extends StatefulWidget {
-  SignUp({Key key}) : super(key: key);
+  SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -16,7 +16,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
   Future save() async {
-    var res = await http.post("http://wcare.herokuapp.com/signup",
+    var res = await http.post("https://wcare.herokuapp.com/api/v1/auth/signup",
         headers: <String, String>{
           'Context-Type': 'application/json;charSet=UTF-8'
         },
@@ -99,7 +99,7 @@ class _SignUpState extends State<SignUp> {
                                         user.name = value;
                                       },
                                       validator: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'Enter something';
                                         }
                                         return null;
@@ -147,7 +147,7 @@ class _SignUpState extends State<SignUp> {
                                       user.email = value;
                                     },
                                     validator: (value) {
-                                      if (value.isEmpty) {
+                                      if (value!.isEmpty) {
                                         return 'Enter something';
                                       } else if (RegExp(
                                               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -199,7 +199,7 @@ class _SignUpState extends State<SignUp> {
                                       user.password = value;
                                     },
                                     validator: (value) {
-                                      if (value.isEmpty) {
+                                      if (value!.isEmpty) {
                                         return 'Enter something';
                                       }
                                       return null;
@@ -237,7 +237,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                               FlatButton(
                                 onPressed: () {
-                                  if (_formKey.currentState.validate()) {
+                                  if (_formKey.currentState!.validate()) {
                                     save();
                                   } else {
                                     print("Failed");

@@ -1,7 +1,7 @@
-const String product1 = 'assets/product/CatFood.jpg';
-const String product2 = 'assets/product/shampoo.png';
-const String product3 = 'assets/product/Sisir.jpg';
-const String product4 = 'assets/product/Soap.Jpg';
+const String product1 = 'https://res.cloudinary.com/corazonn29/image/upload/v1639644698/Wcare%20Stuff/Product/CatFood_nc7stn.webp';
+const String product2 = 'https://res.cloudinary.com/corazonn29/image/upload/v1639644698/Wcare%20Stuff/Product/shampoo_dphyer.jpg';
+const String product3 = 'https://res.cloudinary.com/corazonn29/image/upload/v1639644698/Wcare%20Stuff/Product/Sisir_jebbu3.jpg';
+const String product4 = 'https://res.cloudinary.com/corazonn29/image/upload/v1639644698/Wcare%20Stuff/Product/Soap_j1loko.jpg';
 
 
 const String groomingD = 'assets/service_logo/pet_grooming_d.png';

@@ -8,7 +8,7 @@ import 'package:wcare/servicePage/Item.dart';
 class CartProducts extends StatelessWidget {
   final cartController controller = Get.find();
 
-  CartProducts({Key key}) : super(key: key);
+  CartProducts({Key ? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +38,11 @@ class CartProductCard extends StatelessWidget {
   final int index;
 
   const CartProductCard({
-    Key key,
-    this.controller,
-    this.item,
-    this.quantity,
-    this.index,
+    Key ? key,
+    required this.controller,
+    required this.item,
+    required this.quantity,
+    required this.index,
   }) : super(key: key);
 
   @override

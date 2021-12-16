@@ -6,11 +6,11 @@ class Breed {
   final String telepon;
 
   const Breed({
-    this.imgUrl,
-    this.jenis,
-    this.umur,
-    this.gender,
-    this.telepon,
+    required this.imgUrl,
+    required this.jenis,
+    required this.umur,
+    required this.gender,
+    required this.telepon,
   });
   static const List<Breed> generatedBreed = [
     Breed(
@@ -80,11 +80,11 @@ class Hewan {
   final String telepon;
 
   const Hewan({
-    this.imgUrl,
-    this.jenis,
-    this.umur,
-    this.gender,
-    this.telepon,
+    required this.imgUrl,
+    required this.jenis,
+    required this.umur,
+    required this.gender,
+    required this.telepon,
   });
   static const List<Hewan> generatedHewan = [
     Hewan(
@@ -153,10 +153,10 @@ class Shop {
   final String stok;
 
   const Shop({
-    this.imgUrl,
-    this.jenis,
-    this.harga,
-    this.stok,
+    required this.imgUrl,
+    required this.jenis,
+    required this.harga,
+    required this.stok,
   });
   static const List<Shop> generatedShop = [
     Shop(
