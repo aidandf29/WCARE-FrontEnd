@@ -10,6 +10,7 @@ import 'package:wcare/pages/pet_hotel.dart';
 import 'package:wcare/pages/pet_sitter.dart';
 import 'package:wcare/pages/pet_training.dart';
 import 'package:wcare/pages/signin.dart';
+import 'package:wcare/pages/Navbar.dart';
 import 'package:wcare/servicePage/petshop_list/petshop_list.dart';
 
 class Home extends StatefulWidget {

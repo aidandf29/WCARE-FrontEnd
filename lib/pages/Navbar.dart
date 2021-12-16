@@ -57,7 +57,9 @@ class _NavbarState extends State<Navbar> {
               child: ItemCheckout(),
             ),
             Container(
-              child: Profil(),
+              child: Profil(
+                id: '',
+              ),
             ),
             Container(
               child: ItemWishlist(),
