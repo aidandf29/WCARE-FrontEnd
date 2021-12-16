@@ -10,6 +10,7 @@ import 'package:wcare/pages/pet_hotel.dart';
 import 'package:wcare/pages/pet_sitter.dart';
 import 'package:wcare/pages/pet_training.dart';
 import 'package:wcare/pages/signin.dart';
+import 'package:wcare/pages/Navbar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -383,7 +384,7 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: 30,
                         child: Container(
-                          margin: const EdgeInsets.only(left :10.0),
+                          margin: const EdgeInsets.only(left: 10.0),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'WCARE Nearby',

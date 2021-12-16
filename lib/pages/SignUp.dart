@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:wcare/model/login.dart';
 import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/pages/signin.dart';
@@ -7,34 +9,64 @@ import 'package:wcare/pages/user.dart';
 import 'package:http/http.dart' as http;
 
 class SignUp extends StatefulWidget {
-  SignUp({Key key}) : super(key: key);
-
   @override
   _SignUpState createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
-  final _formKey = GlobalKey<FormState>();
-  Future save() async {
-    var res = await http.post("http://wcare.herokuapp.com/signup",
-        headers: <String, String>{
-          'Context-Type': 'application/json;charSet=UTF-8'
-        },
-        body: <String, String>{
-          'email': user.email,
-          'name': user.name,
-          'password': user.password
-        });
-    print(res.body);
-    Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => Navbar()));
+  bool isHiddenPassword = true;
+  String userId = '';
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  List<Login> _destinations = <Login>[];
+  @override
+  void initState() {
+    super.initState();
+    // _populateDestinations();
   }
 
-  bool isHiddenPassword = true;
-
-  User user = User('', '', '');
   @override
   Widget build(BuildContext context) {
+    Future<List<Login>> _fetchAllDestinations() async {
+      final response =
+          await http.post("https://wcare.herokuapp.com/api/v1/auth/register",
+              headers: <String, String>{
+                'Content-Type': 'application/json; charset=UTF-8',
+              },
+              body: jsonEncode(<String, String>{
+                'email': emailController.text,
+                'password': passwordController.text,
+                'name': nameController.text,
+              }));
+      print(emailController.text + " EMAIL");
+      print(passwordController.text + " PASSWORD");
+      if (response.statusCode == 201) {
+        final List<dynamic> result = jsonDecode(response.body);
+        return result.map((item) => Login.fromJson(item)).toList();
+      } else {
+        throw Exception("Failed to register");
+      }
+    }
+
+    void _populateDestinations() async {
+      try {
+        final destinations = await _fetchAllDestinations();
+        setState(() {
+          _destinations = destinations;
+          print(_destinations);
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => SignIn()));
+        });
+      } catch (Exception) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: const Text('Failed to Sign In'),
+          duration: const Duration(seconds: 1),
+        ));
+      }
+    }
+
     return Scaffold(
       body: Container(
         color: Color(0xFFA7D7C5),
@@ -43,7 +75,6 @@ class _SignUpState extends State<SignUp> {
           Center(
               child: SingleChildScrollView(
             child: Form(
-              key: _formKey,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,17 +138,7 @@ class _SignUpState extends State<SignUp> {
                                   height: 30,
                                   width: 250,
                                   child: TextFormField(
-                                      controller: TextEditingController(
-                                          text: user.email),
-                                      onChanged: (value) {
-                                        user.name = value;
-                                      },
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter something';
-                                        }
-                                        return null;
-                                      },
+                                      controller: nameController,
                                       decoration: InputDecoration(
                                           suffixIcon: Icon(Icons.person),
                                           labelText: "Username",
@@ -155,22 +176,7 @@ class _SignUpState extends State<SignUp> {
                                 height: 30,
                                 width: 250,
                                 child: TextFormField(
-                                    controller:
-                                        TextEditingController(text: user.email),
-                                    onChanged: (value) {
-                                      user.email = value;
-                                    },
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter something';
-                                      } else if (RegExp(
-                                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                          .hasMatch(value)) {
-                                        return null;
-                                      } else {
-                                        return 'Enter valid email';
-                                      }
-                                    },
+                                    controller: emailController,
                                     decoration: InputDecoration(
                                         suffixIcon: Icon(Icons.mail),
                                         labelText: "E-mail",
@@ -207,17 +213,7 @@ class _SignUpState extends State<SignUp> {
                                 height: 30,
                                 width: 250,
                                 child: TextFormField(
-                                    controller:
-                                        TextEditingController(text: user.email),
-                                    onChanged: (value) {
-                                      user.password = value;
-                                    },
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter something';
-                                      }
-                                      return null;
-                                    },
+                                    controller: passwordController,
                                     obscureText: isHiddenPassword,
                                     decoration: InputDecoration(
                                         suffixIcon: InkWell(
@@ -246,55 +242,42 @@ class _SignUpState extends State<SignUp> {
                                         )),
                                     keyboardType: TextInputType.text),
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                margin: EdgeInsets.symmetric(
-                                  vertical: 5,
-                                  horizontal: 20,
-                                ),
-                                padding: EdgeInsets.all(0),
-                                height: 30,
-                                width: 250,
-                                child: TextField(
-                                    obscureText: isHiddenPassword,
-                                    decoration: InputDecoration(
-                                        labelText: "Confirm Password",
-                                        suffixIcon: InkWell(
-                                          onTap: _togglePasswordView,
-                                          child: Icon(Icons.visibility),
-                                        ),
-                                        labelStyle: TextStyle(
-                                            fontFamily: 'PTSerifCaption',
-                                            fontSize: 14),
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            borderSide: BorderSide(
-                                              color: Colors.grey,
-                                              width: 2.0,
-                                            )),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                          // ignore: prefer_const_constructors
-                                          borderSide: BorderSide(
-                                              color: Colors.black, width: 1.0),
-                                        )),
-                                    keyboardType: TextInputType.text),
-                              ),
                               SizedBox(
                                 height: 10,
                               ),
                               FlatButton(
-                                onPressed: () {
-                                  if (_formKey.currentState.validate()) {
-                                    save();
-                                  } else {
-                                    print("Failed");
-                                  }
+                                onPressed: () => {
+                                  _populateDestinations(),
+                                  if (emailController.text.isEmpty ||
+                                      passwordController.text.isEmpty ||
+                                      nameController.text.isEmpty)
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text(
+                                                'Empty Name, Email, or Password.')),
+                                      )
+                                    }
+                                  else if (!RegExp(
+                                          r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                                      .hasMatch(emailController.text))
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text('Email not valid.')),
+                                      )
+                                    }
+                                  else if (passwordController.text.length < 8)
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text(
+                                                'Password is less than 8.')),
+                                      )
+                                    }
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50)),

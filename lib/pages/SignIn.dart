@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:wcare/model/login.dart';
 import 'package:wcare/pages/home.dart';
 import 'package:wcare/pages/navbar.dart';
 import 'package:wcare/pages/signup.dart';
@@ -7,36 +9,62 @@ import 'package:wcare/pages/user.dart';
 import 'package:http/http.dart' as http;
 
 class SignIn extends StatefulWidget {
-  SignIn({Key key}) : super(key: key);
-
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-  final _formKey = GlobalKey<FormState>();
+  bool isHiddenPassword = true;
+  String userId = '';
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  static var currentState;
-  Future save() async {
-    var res = await http.post("http://wcare.herokuapp.com/signin",
-        headers: <String, String>{
-          'Context-Type': 'application/json;charSet=UTF-8'
-        },
-        body: <String, String>{
-          'email': user.email,
-          'password': user.password
-        });
-    print(res.body);
-    Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => Navbar()));
+  List<Login> _destinations = <Login>[];
+  @override
+  void initState() {
+    super.initState();
+    // _populateDestinations();
   }
 
-  bool isHiddenPassword = true;
-
-  User user = User('', '', '');
-  var x = currentState;
   @override
   Widget build(BuildContext context) {
+    Future<List<Login>> _fetchAllDestinations() async {
+      final response = await http.post(
+          "https://wcare.herokuapp.com/api/v1/auth/login",
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode(<String, String>{
+            'email': emailController.text,
+            'password': passwordController.text
+          }));
+      print(emailController.text + " EMAIL");
+      print(passwordController.text + " PASSWORD");
+      if (response.statusCode == 200) {
+        final List<dynamic> result = jsonDecode(response.body);
+        return result.map((item) => Login.fromJson(item)).toList();
+      } else {
+        throw Exception("Failed to Login.");
+      }
+    }
+
+    void _populateDestinations() async {
+      try {
+        final destinations = await _fetchAllDestinations();
+        setState(() {
+          _destinations = destinations;
+          print(_destinations);
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Home()));
+        });
+      } catch (Exception) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: const Text('Failed to Sign In'),
+          duration: const Duration(seconds: 1),
+        ));
+      }
+    }
+
     return Scaffold(
       body: Container(
         color: Color(0xFFA7D7C5),
@@ -45,7 +73,6 @@ class _SignInState extends State<SignIn> {
           Center(
               child: SingleChildScrollView(
             child: Form(
-              key: _formKey,
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,22 +135,7 @@ class _SignInState extends State<SignIn> {
                                   height: 35,
                                   width: 220,
                                   child: TextFormField(
-                                      controller: TextEditingController(
-                                          text: user.email),
-                                      onChanged: (value) {
-                                        user.email = value;
-                                      },
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Enter something';
-                                        } else if (RegExp(
-                                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                            .hasMatch(value)) {
-                                          return null;
-                                        } else {
-                                          return 'Enter valid email';
-                                        }
-                                      },
+                                      controller: emailController,
                                       decoration: InputDecoration(
                                           hintText: "Your Email",
                                           suffixIcon: Icon(Icons.mail),
@@ -158,17 +170,7 @@ class _SignInState extends State<SignIn> {
                                   height: 35,
                                   width: 220,
                                   child: TextFormField(
-                                    controller:
-                                        TextEditingController(text: user.email),
-                                    onChanged: (value) {
-                                      user.password = value;
-                                    },
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter something';
-                                      }
-                                      return null;
-                                    },
+                                    controller: passwordController,
                                     obscureText: isHiddenPassword,
                                     decoration: InputDecoration(
                                         hintText: "8 letter",
@@ -202,12 +204,39 @@ class _SignInState extends State<SignIn> {
                                 height: 10,
                               ),
                               FlatButton(
-                                onPressed: () {
-                                  if (_formKey.currentState.validate()) {
-                                    save();
-                                  } else {
-                                    print("Failed");
-                                  }
+                                onPressed: () => {
+                                  _populateDestinations(),
+                                  if (emailController.text.isEmpty ||
+                                      passwordController.text.isEmpty)
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text(
+                                                'Empty Email or Password.')),
+                                      )
+                                    }
+                                  else if (!RegExp(
+                                          r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                                      .hasMatch(emailController.text))
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text('Email not valid.')),
+                                      )
+                                    }
+                                  else if (passwordController.text.length < 8)
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                            content: Text(
+                                                'Password is less than 8.')),
+                                      )
+                                    }
+                                  else
+                                    {_populateDestinations()}
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50)),

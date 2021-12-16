@@ -42,7 +42,9 @@ void main() => runApp(MaterialApp(
         '/training': (context) => PetTraining(),
         '/petshop': (context) => ProductOnestopPetshop(),
         '/product': (context) => ProductPage(),
-        '/profil': (context) => Profil(),
+        '/profil': (context) => Profil(
+              id: '',
+            ),
         '/signin': (context) => SignIn(),
         '/signup': (context) => SignUp(),
         '/wishlist': (context) => Wishlist(),
@@ -50,3 +52,25 @@ void main() => runApp(MaterialApp(
         '/navbar': (context) => Navbar(),
       },
     ));
+
+class Main extends StatefulWidget {
+  late String id;
+
+  Main({required this.id});
+
+  @override
+  _MainState createState() => _MainState();
+}
+
+class _MainState extends State<Main> {
+  String userId = "";
+
+  @override
+  void initState() {
+    super.initState();
+    userId = widget.id;
+  }
+
+  @override
+  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}

@@ -52,7 +52,9 @@ class _NavbarState extends State<Navbar> {
               color: Colors.green,
             ),
             Container(
-              child: Profil(),
+              child: Profil(
+                id: '',
+              ),
             ),
           ],
         ),
