@@ -2,14 +2,19 @@
 
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:get/get.dart';
-import 'dart:ui';
-import 'package:wcare/servicePage/controller.dart';
+import 'package:wcare/controller/controller_cart.dart';
+import 'package:wcare/controller/controller_wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:wcare/pages/Profil.dart';
+import 'package:wcare/pages/checkout/checkout_item.dart';
 import 'package:wcare/pages/checkout/checkout_page.dart';
 import 'package:wcare/pages/home.dart';
+import 'package:wcare/pages/wishlist/wishlist_item.dart';
+import 'package:wcare/pages/wishlist/wishlist_page.dart';
 
 class Navbar extends StatefulWidget {
+  const Navbar({Key key}) : super(key: key);
+
   @override
   _NavbarState createState() => _NavbarState();
 }
@@ -17,6 +22,7 @@ class Navbar extends StatefulWidget {
 class _NavbarState extends State<Navbar> {
   int _currentIndex = 0;
   final CartController = Get.put(cartController());
+  final WishlistController = Get.put(wishlistController());
 
   var _pageController;
 
@@ -52,6 +58,9 @@ class _NavbarState extends State<Navbar> {
             ),
             Container(
               child: Profil(),
+            ),
+            Container(
+              child: ItemWishlist(),
             ),
           ],
         ),

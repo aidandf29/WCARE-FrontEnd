@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wcare/pages/wishlist/wishlist_item.dart';
 import 'package:wcare/pages/navbar.dart';
-import 'checkout_item.dart';
-import 'checkout_total.dart';
 
-class ItemCheckout extends StatelessWidget {
-  const ItemCheckout({Key key}) : super(key: key);
+class ItemWishlist extends StatelessWidget {
+  const ItemWishlist({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class ItemCheckout extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              'Cart',
+                              'Wishlist',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 24,
@@ -65,7 +64,7 @@ class ItemCheckout extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(25, 30, 0, 20),
                 child: Container(
                   child: Text(
-                    'Order List',
+                    'Wishlist',
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 20,
@@ -73,12 +72,11 @@ class ItemCheckout extends StatelessWidget {
                   ),
                 ),
               ),
-              CartProducts(),
+              WishlistItem(),
               // ignore: prefer_const_constructors
               SizedBox(
                 height: 160,
               ),
-              CartTotal(),
             ],
           ),
         ),

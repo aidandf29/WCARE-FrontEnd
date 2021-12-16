@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wcare/controller/controller_cart.dart';
 import 'package:wcare/pages/pet_grooming.dart';
-import 'package:wcare/servicePage/controller.dart';
 
 // import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'dart:async';
@@ -20,7 +20,8 @@ class _GroomingList extends State<GroomingList> {
   final CartController = Get.put(cartController());
   // Timer? debouncer;
   // bool loading = true;
-
+  Icon cusIcon = Icon(Icons.search);
+  Widget cusSearchBar = Text("Pet Grooming");
   @override
   Widget build(BuildContext context) {
     return Scaffold(

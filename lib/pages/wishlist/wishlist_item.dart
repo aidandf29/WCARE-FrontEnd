@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:wcare/controller/controller_cart.dart';
+import 'package:wcare/controller/controller_wishlist.dart';
 import 'package:wcare/pages/Navbar.dart';
 import 'package:wcare/servicePage/Item.dart';
 
-class CartProducts extends StatelessWidget {
-  final cartController controller = Get.find();
+class WishlistItem extends StatelessWidget {
+  final wishlistController controller = Get.find();
 
-  CartProducts({Key key}) : super(key: key);
+  WishlistItem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class CartProducts extends StatelessWidget {
 }
 
 class CartProductCard extends StatelessWidget {
-  final cartController controller;
+  final wishlistController controller;
   final Item item;
   final int quantity;
   final int index;
