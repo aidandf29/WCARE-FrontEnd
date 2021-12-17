@@ -5,6 +5,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Activity extends StatefulWidget {
+  late final String id;
+  Activity({required this.id});
   @override
   _ActivityState createState() => _ActivityState();
 }

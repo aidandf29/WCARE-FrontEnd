@@ -12,6 +12,8 @@ import 'dart:async';
 import 'package:wcare/servicePage/Item.dart';
 
 class TrainingList extends StatefulWidget {
+  late final String id;
+  TrainingList({required this.id});
   @override
   _TrainingList createState() => _TrainingList();
 }
@@ -35,7 +37,8 @@ class _TrainingList extends State<TrainingList> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => PetTraining()));
+                      builder: (BuildContext context) =>
+                          PetTraining(id: widget.id)));
             },
             icon: Icon(Icons.arrow_back)),
         actions: <Widget>[
@@ -104,8 +107,7 @@ class _TrainingList extends State<TrainingList> {
     );
   }
 
-  
-    Widget listItem(Item item) {
+  Widget listItem(Item item) {
     double cWidth = MediaQuery.of(context).size.width * 0.4;
     return Column(children: [
       Padding(
@@ -236,5 +238,4 @@ class _TrainingList extends State<TrainingList> {
       ),
     ]);
   }
-  }
-
+}

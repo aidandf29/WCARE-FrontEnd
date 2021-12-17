@@ -6,6 +6,8 @@ import 'package:wcare/pages/signin.dart';
 import 'package:wcare/pages/dummy.dart';
 
 class PetBreed extends StatefulWidget {
+  late final String id;
+  PetBreed({required this.id});
   @override
   _PetBreedState createState() => _PetBreedState();
 }
@@ -23,7 +25,8 @@ class _PetBreedState extends State<PetBreed> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               icon: Icon(Icons.arrow_back)),
           actions: <Widget>[

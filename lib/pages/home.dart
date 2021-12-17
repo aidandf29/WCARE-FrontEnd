@@ -14,6 +14,8 @@ import 'package:wcare/pages/Navbar.dart';
 import 'package:wcare/servicePage/petshop_list/petshop_list.dart';
 
 class Home extends StatefulWidget {
+  late final String id;
+  Home({required this.id});
   @override
   _HomeState createState() => _HomeState();
 }
@@ -107,7 +109,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetGrooming()));
+                                                        PetGrooming(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -143,7 +147,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetTraining()));
+                                                        PetTraining(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -179,7 +185,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        ItemList()));
+                                                        ItemList(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -215,7 +223,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetBreed()));
+                                                        PetBreed(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -251,7 +261,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetHotel()));
+                                                        PetHotel(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -287,7 +299,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetSitter()));
+                                                        PetSitter(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -323,7 +337,9 @@ class _HomeState extends State<Home> {
                                             MaterialPageRoute(
                                                 builder:
                                                     (BuildContext context) =>
-                                                        PetAdopt()));
+                                                        PetAdopt(
+                                                          id: widget.id,
+                                                        )));
                                       },
                                       splashColor: Colors.greenAccent,
                                       child: Center(
@@ -467,7 +483,9 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        PetGrooming()));
+                                        PetGrooming(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -495,7 +513,9 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        PetTraining()));
+                                        PetTraining(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -522,8 +542,9 @@ class _HomeState extends State<Home> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        ItemList()));
+                                    builder: (BuildContext context) => ItemList(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -550,8 +571,9 @@ class _HomeState extends State<Home> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        PetHotel()));
+                                    builder: (BuildContext context) => PetHotel(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -576,7 +598,9 @@ class _HomeState extends State<Home> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        PetSitter()));
+                                        PetSitter(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -600,8 +624,9 @@ class _HomeState extends State<Home> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        PetAdopt()));
+                                    builder: (BuildContext context) => PetAdopt(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(
@@ -625,8 +650,9 @@ class _HomeState extends State<Home> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        PetBreed()));
+                                    builder: (BuildContext context) => PetBreed(
+                                          id: widget.id,
+                                        )));
                           },
                           splashColor: Colors.greenAccent,
                           child: Center(

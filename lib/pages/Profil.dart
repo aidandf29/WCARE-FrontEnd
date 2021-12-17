@@ -8,8 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:wcare/model/profile_model.dart';
 import 'package:wcare/main.dart';
 import 'package:http/http.dart' as http;
+import 'package:wcare/pages/Navbar.dart';
 import 'package:wcare/pages/home.dart';
-
 
 class Profil extends StatefulWidget {
   late final String id;
@@ -21,16 +21,13 @@ class Profil extends StatefulWidget {
 
 class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
-  
 
   TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController addressController = TextEditingController();
-  TextEditingController descriptionController = TextEditingController();
 
-  List<ProfileModel> _destinations = <ProfileModel>[];
-  Future<List<ProfileModel>> _fetchAllDestinations() async {
+  List<ProfileModel> profileData = <ProfileModel>[];
+  Future<List<ProfileModel>> getDatas() async {
     final response =
         await http.get("https://wcare.herokuapp.com/api/v1/users/${widget.id}");
 
@@ -46,12 +43,12 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
 
-  void _populateDestinations() async {
+  void getProfileId() async {
     try {
-      final destinations = await _fetchAllDestinations();
+      final response = await getDatas();
       setState(() {
-        _destinations = destinations;
-        print(_destinations);
+        profileData = response;
+        print(profileData);
       });
     } catch (Exception) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -75,7 +72,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _populateDestinations();
+    getProfileId();
   }
 
   @override
@@ -218,9 +215,8 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                   new Flexible(
                                     child: new TextFormField(
                                       controller: nameController,
-                                      decoration: const InputDecoration(
-                                        hintText: "Enter Your Name",
-                                      ),
+                                      decoration: InputDecoration(
+                                          hintText: profileData[0].name),
                                       enabled: !_status,
                                       autofocus: !_status,
                                     ),
@@ -238,7 +234,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       new Text(
-                                        'Email ID',
+                                        'Email',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -254,12 +250,12 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                 mainAxisSize: MainAxisSize.max,
                                 children: <Widget>[
                                   new Flexible(
-                                    child: new TextFormField(
-                                      controller: emailController,
-                                      decoration: const InputDecoration(
-                                          hintText: "Enter Email ID"),
-                                      enabled: !_status,
-                                    ),
+                                    child: Text(profileData[0].email),
+                                    // child: new TextField(
+                                    //   decoration: InputDecoration(
+                                    //       hintText: profileData[0].email),
+                                    //   enabled: !_status,
+                                    // ),
                                   ),
                                 ],
                               )),
@@ -274,7 +270,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       new Text(
-                                        'Mobile',
+                                        'Phone Number',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -292,8 +288,8 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                   new Flexible(
                                     child: new TextFormField(
                                       controller: phoneController,
-                                      decoration: const InputDecoration(
-                                          hintText: "Enter Mobile Number"),
+                                      decoration: InputDecoration(
+                                          hintText: profileData[0].phone),
                                       enabled: !_status,
                                     ),
                                   ),
@@ -328,9 +324,8 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                                   new Flexible(
                                     child: new TextFormField(
                                       controller: addressController,
-                                      decoration: const InputDecoration(
-                                        hintText: "Enter Your Address",
-                                      ),
+                                      decoration: InputDecoration(
+                                          hintText: profileData[0].address),
                                       enabled: !_status,
                                       autofocus: !_status,
                                     ),
@@ -375,7 +370,6 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                     String jsonStr = jsonEncode({
                       'name': nameController.text,
                       'address': addressController.text,
-                      'description': descriptionController.text,
                       'phone': phoneController.text,
                     });
                     await http.put(
@@ -389,17 +383,19 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                   } catch (e) {
                     print(e);
                   }
-                  if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar. In the real world,
-                    // you'd often call a server or save the information in a database.
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')),
-                    );
-                  }
+                  // if (_formKey.currentState!.validate()) {
+                  // If the form is valid, display a snackbar. In the real world,
+                  // you'd often call a server or save the information in a database.
+
+                  //   );
+                  // }
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Processing Data')),
+                  );
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Profil(
+                          builder: (context) => Navbar(
                                 id: widget.id,
                               )));
                   setState(() {

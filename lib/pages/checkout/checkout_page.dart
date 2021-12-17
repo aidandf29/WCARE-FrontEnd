@@ -3,9 +3,16 @@ import 'package:wcare/pages/navbar.dart';
 import 'checkout_item.dart';
 import 'checkout_total.dart';
 
-class ItemCheckout extends StatelessWidget {
-  const ItemCheckout({Key ? key}) : super(key: key);
+class ItemCheckout extends StatefulWidget {
+  // const ItemCheckout({Key? key}) : super(key: key);
+  late final String id;
+  ItemCheckout({required this.id});
 
+  @override
+  State<ItemCheckout> createState() => _ItemCheckoutState();
+}
+
+class _ItemCheckoutState extends State<ItemCheckout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +42,7 @@ class ItemCheckout extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          Navbar()));
+                                          Navbar(id: widget.id)));
                             },
                             icon: Icon(Icons.arrow_back)),
                         SizedBox(

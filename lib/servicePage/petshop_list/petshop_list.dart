@@ -10,6 +10,8 @@ import 'dart:async';
 import 'package:wcare/servicePage/Item.dart';
 
 class ItemList extends StatefulWidget {
+  late final String id;
+  ItemList({required this.id});
   @override
   _ItemList createState() => _ItemList();
 }
@@ -33,7 +35,8 @@ class _ItemList extends State<ItemList> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => Navbar()));
+                      builder: (BuildContext context) =>
+                          Navbar(id: widget.id)));
             },
             icon: Icon(Icons.arrow_back)),
         actions: <Widget>[

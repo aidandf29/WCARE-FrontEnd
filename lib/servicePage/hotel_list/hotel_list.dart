@@ -12,6 +12,8 @@ import 'dart:async';
 import 'package:wcare/servicePage/Item.dart';
 
 class HotelList extends StatefulWidget {
+  late final String id;
+  HotelList({required this.id});
   @override
   _HotelList createState() => _HotelList();
 }
@@ -35,7 +37,8 @@ class _HotelList extends State<HotelList> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => PetHotel()));
+                      builder: (BuildContext context) =>
+                          PetHotel(id: widget.id)));
             },
             icon: Icon(Icons.arrow_back)),
         actions: <Widget>[
@@ -105,136 +108,134 @@ class _HotelList extends State<HotelList> {
   }
 
   Widget listItem(Item item) {
-    
-      double cWidth = MediaQuery.of(context).size.width * 0.4;
-      return Column(children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 5, 20, 1),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-              boxShadow: kElevationToShadow[1],
-              border: Border.all(
-                  color: Color(0XFF5C8D89), width: 2, style: BorderStyle.solid),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(9),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(right: 5),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      child: Image.network(
-                        item.imgUrl,
-                        width: 80,
-                        height: 60,
-                        fit: BoxFit.cover,
+    double cWidth = MediaQuery.of(context).size.width * 0.4;
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.fromLTRB(20, 5, 20, 1),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+            boxShadow: kElevationToShadow[1],
+            border: Border.all(
+                color: Color(0XFF5C8D89), width: 2, style: BorderStyle.solid),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(9),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(right: 5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: Image.network(
+                      item.imgUrl,
+                      width: 80,
+                      height: 60,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: cWidth,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: [
+                            Text(
+                              item.name,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ),
-                  Container(
-                    width: cWidth,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            children: [
-                              Text(
-                                item.name,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
-                          ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Rp. ${item.price}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
                         ),
-                        SizedBox(
-                          height: 10,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 5,
+                          primary: Colors.white,
+                          side:
+                              BorderSide(width: 1.0, color: Color(0XFF74B49B)),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 14),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
                         ),
-                        Text(
-                          'Rp. ${item.price}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            elevation: 5,
-                            primary: Colors.white,
-                            side: BorderSide(
-                                width: 1.0, color: Color(0XFF74B49B)),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 14),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                          ),
-                          onPressed: () {
-                            CartController.addItem(item);
-                            Navigator.pushReplacementNamed(
-                                context, '/itemcheckout');
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.assignment_outlined,
-                                color: Colors.black,
-                                size: 24,
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Order',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                        onPressed: () {
+                          CartController.addItem(item);
+                          Navigator.pushReplacementNamed(
+                              context, '/itemcheckout');
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.assignment_outlined,
+                              color: Colors.black,
+                              size: 24,
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Order',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                  Spacer(),
-                  IconButton(
-                    onPressed: () {
-                      WishlistController.addItem(item);
-                      Navigator.pushReplacementNamed(context, '/itemwishlist');
-                    },
-                    icon: Icon(
-                      Icons.favorite,
-                      color: Colors.redAccent,
-                    ),
+                ),
+                Spacer(),
+                IconButton(
+                  onPressed: () {
+                    WishlistController.addItem(item);
+                    Navigator.pushReplacementNamed(context, '/itemwishlist');
+                  },
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.redAccent,
                   ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 18,
+                ),
+              ],
             ),
           ),
         ),
-      ]);
-    }
+      ),
+    ]);
   }
-
+}

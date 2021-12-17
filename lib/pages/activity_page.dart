@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:wcare/pages/navbar.dart';
 
 class Activity extends StatefulWidget {
+  late final String id;
+  Activity({required this.id});
   @override
   _ActivityState createState() => _ActivityState();
 }
@@ -22,7 +24,8 @@ class _ActivityState extends State<Activity> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => Navbar()));
+                        builder: (BuildContext context) =>
+                            Navbar(id: widget.id)));
               },
               icon: Icon(Icons.arrow_back)),
           actions: <Widget>[
