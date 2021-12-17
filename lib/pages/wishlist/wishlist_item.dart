@@ -99,16 +99,8 @@ class CartProductCard extends StatelessWidget {
                   controller.removeItem(item);
                 },
                 icon: Icon(
-                  Icons.remove_circle,
-                ),
-              ),
-              Text('${quantity}'),
-              IconButton(
-                onPressed: () {
-                  controller.addItem(item);
-                },
-                icon: Icon(
-                  Icons.add_circle,
+                  Icons.favorite,
+                  color: Colors.black,
                 ),
               ),
             ],
