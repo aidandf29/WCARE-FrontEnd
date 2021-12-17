@@ -131,7 +131,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                             CircleAvatar(
                               backgroundColor: Colors.transparent,
                               child: Icon(
-                                Icons.history,
+                                Icons.assignment_outlined,
                                 color: Colors.black,
                                 size: 38.0,
                               ),
@@ -139,7 +139,7 @@ class _ProfilState extends State<Profil> with SingleTickerProviderStateMixin {
                             CircleAvatar(
                               backgroundColor: Colors.transparent,
                               child: Icon(
-                                Icons.shopping_basket,
+                                Icons.attach_money ,
                                 color: Colors.black,
                                 size: 38.0,
                               ),
