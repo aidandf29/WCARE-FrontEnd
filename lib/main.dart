@@ -50,13 +50,13 @@ void main() => runApp(MaterialApp(
         // '/training': (context) => PetTraining(),
         // '/petshop': (context) => ProductOnestopPetshop(),
         // '/product': (context) => ProductPage(),
-        // '/profil': (context) => Profil(
-        //       id: '',
-        //     ),
+        '/profil': (context) => Profil(
+              id: '',
+            ),
         '/signin': (context) => SignIn(),
         // '/signup': (context) => SignUp(),
         // '/wishlist': (context) => Wishlist(),
-        '/searchbar': (context) => Searchbar(),
+        // '/searchbar': (context) => Searchbar(),
         // '/navbar': (context) => Navbar(),
         // '/hotellist': (context) => HotelList(),
         // '/groominglist': (context) => GroomingList(),

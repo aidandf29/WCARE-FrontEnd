@@ -30,26 +30,26 @@ class _HomeState extends State<Home> {
         ),
         title: Column(
           children: [
-            // FlatButton(
-            //   onPressed: () {
-            //     Navigator.pushReplacement(
-            //         context,
-            //         MaterialPageRoute(
-            //             builder: (BuildContext context) => SignIn()));
-            //   },
-            //   shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(50)),
-            //   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            //   color: Color(0x0ff4f9f4),
-            //   child: Text(
-            //     'Logout',
-            //     style: TextStyle(
-            //         fontFamily: 'PTSerifCaption',
-            //         fontWeight: FontWeight.bold,
-            //         fontSize: 16),
-            //   ),
-            //   splashColor: Colors.greenAccent,
-            // ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => SignIn()));
+              },
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              color: Color(0x0ff4f9f4),
+              child: Text(
+                'Logout',
+                style: TextStyle(
+                    fontFamily: 'PTSerifCaption',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
+              splashColor: Colors.greenAccent,
+            ),
           ],
         ),
       ),
@@ -681,7 +681,7 @@ class _HomeState extends State<Home> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Image.asset(
-                                  'assets/comingsoon.png',
+                                  'assets/comingsoo.png',
                                   height: 250,
                                 ),
                               ],

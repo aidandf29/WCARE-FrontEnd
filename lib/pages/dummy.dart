@@ -41,34 +41,6 @@ class Breed {
         umur: 'age: 2 years',
         gender: 'gender: Male',
         telepon: 'call: 085157477606'),
-    Breed(
-        imgUrl:
-            'https://lh4.googleusercontent.com/qpBfuQuueX4MvxU3Y_BCoHiicV4HW2L6Ill8__ghcOHUoc5n-YuYPcESkJcEfrw7Px5ZPkqTvQiFtcStGg9X=w1960-h4134-rw',
-        jenis: 'Anathapindika Mulyawan',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Breed(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127505/jonathan_vom0ys.jpg',
-        jenis: 'Jonathan Aurelius',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Breed(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127473/aidan_t1zbjm.png',
-        jenis: 'Aidan Daffa',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Breed(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127618/omar_sfhzsf.jpg',
-        jenis: 'Muhammad Omar',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
   ];
 }
 
@@ -113,34 +85,6 @@ class Hewan {
             'https://th.bing.com/th/id/OIP.vmOSRx4B--GXaKJbPDPrHgHaE8?w=268&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7',
         jenis: 'Kadal Gurun',
         umur: 'age: 2 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Hewan(
-        imgUrl:
-            'https://www.gstatic.com/_/apps-fileview/_/js/k=apps-fileview.v.en.ZK6JRX7iYGU.O/am=IAI/d=1/rs=AO0039vI27jBtynnFVmCz9m7gy5EjyLfcg/m=v,wb',
-        jenis: 'Anathapindika Mulyawan',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Hewan(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127505/jonathan_vom0ys.jpg',
-        jenis: 'Jonathan Aurelius',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Hewan(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127473/aidan_t1zbjm.png',
-        jenis: 'Aidan Daffa',
-        umur: 'age: 20 years',
-        gender: 'gender: Male',
-        telepon: 'call: 085157477606'),
-    Hewan(
-        imgUrl:
-            'https://res.cloudinary.com/dhorcc7j1/image/upload/v1639127618/omar_sfhzsf.jpg',
-        jenis: 'Muhammad Omar',
-        umur: 'age: 20 years',
         gender: 'gender: Male',
         telepon: 'call: 085157477606'),
   ];
